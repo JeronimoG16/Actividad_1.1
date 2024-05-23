@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CRUDJugadores {
-    private static ArrayList<Jugador> jugadores = new ArrayList<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final ArrayList<Jugador> jugadores = new ArrayList<>();
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         int opcion;
@@ -111,12 +111,22 @@ public class CRUDJugadores {
             System.out.print("Ingrese nueva posición (actual: " + jugador.getPosicion() + "): ");
             String posicion = scanner.nextLine();
 
-            jugador.setNombre(nombre);
-            jugador.setEdad(edad);
-            jugador.setPosicion(posicion);
+            System.out.println("Datos nuevos del jugador:");
+            System.out.println("Nombre: " + nombre);
+            System.out.println("Edad: " + edad);
+            System.out.println("Posición: " + posicion);
 
-            System.out.println("Jugador editado exitosamente.");
-            listarJugadores();
+            System.out.print("¿Confirma la actualización de los datos del jugador? (s/n): ");
+            String confirmacion = scanner.nextLine();
+            if (confirmacion.equalsIgnoreCase("s")) {
+                jugador.setNombre(nombre);
+                jugador.setEdad(edad);
+                jugador.setPosicion(posicion);
+                System.out.println("Jugador editado exitosamente.");
+                listarJugadores();
+            } else {
+                System.out.println("Edición cancelada.");
+            }
         } else {
             System.out.println("Jugador no encontrado.");
         }
