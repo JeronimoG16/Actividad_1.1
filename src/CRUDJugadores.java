@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+//Paquete de clases a utilizar
+import java.util.ArrayList; 
 import java.util.Scanner;
 
 public class CRUDJugadores {
