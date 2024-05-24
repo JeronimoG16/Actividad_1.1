@@ -1,4 +1,4 @@
-public class Jugador {
+public class Jugador { //Clase principal Jugador
     private static int contadorID = 0; // Contador estático para generar IDs únicos
     private int id;
     private String nombre;
@@ -43,7 +43,7 @@ public class Jugador {
         this.posicion = posicion;
     }
 
-    @Override
+    @Override //Metodo para imprimir cadenas de caracteres
     public String toString() {
         return "ID: " + id + ", Nombre: " + nombre + ", Edad: " + edad + ", Posición: " + posicion;
     }
